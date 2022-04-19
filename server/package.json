@@ -1,0 +1,42 @@
+{
+	"name": "studenthelper",
+	"version": "1.0.0",
+	"description": "StudentHelper",
+	"main": "app.js",
+	"dependencies": {
+		"ajv": "^6.10.2",
+		"ajv-keywords": "^3.4.1",
+		"axios": "^0.19.0",
+		"cors": "^2.8.5",
+		"express": "^4.17.3",
+		"jsonwebtoken": "^8.5.1",
+		"kcors": "2.2.1",
+		"koa": "2.5.0",
+		"koa-body": "2.5.0",
+		"koa-compress": "2.0.0",
+		"koa-router": "7.4.0",
+		"moment": "^2.24.0",
+		"mongoose": "^5.6.7",
+		"mysql": "^2.18.1",
+		"mysql2": "^2.3.3",
+		"nodemon": "1.14.12",
+		"package.json": "^2.0.1",
+		"ramda": "0.25.0"
+	},
+	"devDependencies": {
+		"co": "4.6.0",
+		"eslint": "4.17.0",
+		"eslint-plugin-fp": "2.3.0",
+		"eslint-plugin-mongodb": "0.2.4",
+		"eslint-plugin-security": "1.4.0",
+		"husky": "0.14.3",
+		"jasmine": "3.0.0",
+		"jasmine-co": "1.2.2",
+		"nyc": "^14.1.1"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "npm install && \"node_modules/.bin/nodemon\" app.js"
+	},
+	"license": "OSL-3.0"
+}
