@@ -66,31 +66,46 @@ export default function Login (){
     let history = useHistory();
 
     const login = () => {
+      console.log("here " + username);
+      console.log(password);
+
+      (async () => {
+        const rawResponse = await fetch('http://localhost:3001/auth/login', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({"username": username, "password": password})
+        });
+        const content = await rawResponse.json();
       
+        console.log("content" + JSON.stringify(content));
+      })();
       
       // setStatus(1000);
       // alert("login called");
-      fetch("http://localhost:3001/auth/login", {
-        method: 'POST',
-        username: username,
-        password: password,
-      }).then((response) => {
-        return response.json() 
-     }).then((responseData) => {
-        // console.log(responseData);
-        var temp = responseData.currstatus;
-        alert(temp);
-        setCurrStatus(temp);
-        alert(responseStatus);
+    //   fetch("http://localhost:3001/auth/login", {
+    //     method: 'POST',
+    //     username: username,
+    //     password: password,
+    //   }).then((response) => {
+    //     return response.json() 
+    //  }).then((responseData) => {
+    //     // console.log(responseData);
+    //     var temp = responseData.currstatus;
+    //     alert(temp);
+    //     setCurrStatus(temp);
+    //     alert(responseStatus);
 
-        if(responseStatus == 400){
-          setLoginStatus(responseData.message)
-        }
+    //     if(responseStatus == 400){
+    //       setLoginStatus(responseData.message)
+    //     }
 
         
-        return responseData;
+    //     return responseData;
 
-      });
+    //   });
       
       
       // .then((response) => {

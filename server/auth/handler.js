@@ -49,9 +49,10 @@ async function register({
 
 async function login({ username, password }, ctx) {
     console.log("login api handler");
+    console.log(username);
+    console.log(password);
     try {
-        const result = await db.query("SELECT * from users where user_id = ? AND password = ?",
-        [username,password]);
+        const result = await db.query("SELECT * from users where user_id = ? AND password = ?", [username,password]);
         console.log(result);
         if (result.length == 0)
         {
